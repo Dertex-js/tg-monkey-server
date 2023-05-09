@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const token = '1822310114:AAGCXLbsxTVOwGzHBQLaGLC7HlJhekKnzzY'
 const webAppUrl = 'https://test-learning-tg-web-app--papaya-frangipane-b7497e.netlify.app'
-const PORT = 8080
+const PORT = 8000
 
 const bot = new TelegramBot(token, {polling: true})
 const app = express()
@@ -56,7 +56,7 @@ app.post('/web-data', async (req, res) => {
       id: queryId,
       title: 'Успешная покупка',
       input_message_text: {
-        message_text: `Поздравляем с покупкой, вы приобрели товары на сумму ${totalPrice}`
+        message_text: `Поздравляем с покупкой, вы приобрели товары на сумму ${totalPrice}. Список товаров: ${products.join(", ")}`
       }
     })
     return res.status(200).json({})
