@@ -75,7 +75,7 @@ app.post('/web-data', async (req, res) => {
 })
 
 app.get('/get', async () => {
-  console.log("recieved")
+  await console.log("recieved")
 })
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
