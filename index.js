@@ -56,7 +56,7 @@ app.post('/web-data', async (req, res) => {
       type: "article",
       id: queryId,
       title: 'Успешная покупка',
-      input_message_text: {
+      input_message_content: {
         message_text: `Поздравляем с покупкой, вы приобрели товары на сумму ${totalPrice}. Список товаров: ${products.map(item => item.title).join(", ")}`
       }
     })
@@ -66,7 +66,7 @@ app.post('/web-data', async (req, res) => {
       type: "article",
       id: queryId,
       title: 'Не удалось приобрести товары',
-      input_message_text: {
+      input_message_content: {
         message_text: `Не удалось приобрести товары`
       }
     })
